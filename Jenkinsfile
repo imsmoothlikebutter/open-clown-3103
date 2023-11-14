@@ -9,10 +9,10 @@ pipeline {
 
         stage('Selenium Tessting') {
 			steps {
-                pwd
-                cd openclown-ui-test
-                npm i
-                npx mocha test.js
+				script{
+					sh 'cd openclown-ui-test && npm install'
+					sh 'cd openclown-ui-test && npx mocha test.js'
+				}
 			}
 		}
 
@@ -27,7 +27,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'SonarQube'
                     withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=OWASP -Dsonar.sources=. -Dsonar.host.url=http://sonarqube:9000 -Dsonar.token=sqp_3388fa5662f18de82c2fd41541521adb0da0b03e"
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=PYP -Dsonar.sources=. -Dsonar.host.url=http://sonarqube:9000 -Dsonar.token=sqp_3388fa5662f18de82c2fd41541521adb0da0b03e"
                     }
                 }
             }
