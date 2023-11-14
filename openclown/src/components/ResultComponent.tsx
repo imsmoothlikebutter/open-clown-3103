@@ -15,7 +15,8 @@ const ResultComponent: React.FC = () => {
 
   return (
     <div className="container">
-      <h2>Search Term: {searchTerm}</h2> {/* Display the passed search term */}
+      <h2 id="searchTermDisplay">{searchTerm}</h2>{" "}
+      {/* Display the passed search term */}
       <button onClick={handleBackToSearch} className="search-button">
         Back to Search
       </button>

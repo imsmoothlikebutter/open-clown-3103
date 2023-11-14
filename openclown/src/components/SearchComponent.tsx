@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const SearchComponent: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [xssInputValidated, setXSSInputValidated] = useState<boolean>(false);
-  const [sqlInputValidated, setSQLInputValidated] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
@@ -67,7 +65,7 @@ const SearchComponent: React.FC = () => {
           placeholder="Enter search term"
           className="search-input" // Add the input style
         />
-        <button type="submit" className="search-button">
+        <button type="submit" className="search-button" id="search-button">
           Search
         </button>
       </form>
