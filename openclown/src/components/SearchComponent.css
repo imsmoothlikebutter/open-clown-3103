@@ -1,0 +1,29 @@
+/* Style for the container that wraps your search component */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use the full height of the viewport */
+    width: 100vw; /* Use the full width of the viewport */
+  }
+  
+  /* Optional: Style for the form to limit its width and center contents */
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* You can adjust this width as needed */
+  }
+  
+  /* Style for the input field for aesthetics */
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; /* Space between the input field and the button */
+  }
+  
+  /* Style for the button for aesthetics */
+  .search-button {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
