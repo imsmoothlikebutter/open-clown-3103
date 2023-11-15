@@ -7,6 +7,19 @@ pipeline {
 			}
 		}
 
+        stage('Containerizing Web App') {
+			steps {
+				script{
+                    sh 'dockerd &'
+                    sh 'docker --version'
+                    sh 'cd openclown && docker-compose down'
+                    sh 'cd openclown && docker-compose build --no-cache'
+                    sh 'cd openclown && docker-compose up --detach --remove-orphans'
+                    sh 'docker ps'
+                }
+			}
+		}
+
         stage('Selenium Tessting') {
 			steps {
 				script{
